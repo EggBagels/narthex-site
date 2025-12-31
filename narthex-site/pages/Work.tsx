@@ -8,7 +8,7 @@ export const Work: React.FC = () => {
     <>
       {/* Hero - Vaulted Ceiling */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517502884422-41e157d4ed43?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-25"></div>
+        <div className="absolute inset-0 bg-[url('/Images/vaulted-ceiling.png')] bg-cover bg-center opacity-25"></div>
         {/* Vignette and Darkening */}
         <div className="absolute inset-0 bg-narthex-black/50"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]"></div>
@@ -52,7 +52,7 @@ export const Work: React.FC = () => {
 
       {/* Pricing Options - Gothic Archway Background */}
       <section id="options" className="py-24 px-6 bg-narthex-black text-narthex-cream relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1590059591465-b46321287118?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/Images/gothic-archway.png')] bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-narthex-black via-narthex-black/80 to-narthex-black/90"></div>
         
         <div className="max-w-6xl mx-auto relative z-10">

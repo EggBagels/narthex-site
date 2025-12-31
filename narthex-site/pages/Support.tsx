@@ -8,7 +8,7 @@ export const Support: React.FC = () => {
     <>
       {/* Hero - Stained Glass */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1576771329249-1433de8e88e8?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/Images/st-joseph.png')] bg-cover bg-center opacity-20"></div>
         {/* Darkening & Vignette */}
         <div className="absolute inset-0 bg-narthex-black/60"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]"></div>

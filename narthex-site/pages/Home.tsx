@@ -8,7 +8,7 @@ export const Home: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden parallax" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1548544149-4835e62ee5b3?auto=format&fit=crop&q=80')" }}>
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden parallax" style={{ backgroundImage: "url('/Images/cathedral-nave.png')" }}>
         <div className="absolute inset-0 bg-narthex-black/25 mix-blend-multiply"></div>
         {/* Subtle Vignette */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(10,10,10,0.6)_100%)]"></div>
@@ -79,7 +79,7 @@ export const Home: React.FC = () => {
 
       {/* Who This Is For */}
       <section className="relative py-32 bg-narthex-black text-narthex-cream overflow-hidden">
-        <div className="absolute left-0 top-0 bottom-0 w-full md:w-1/2 bg-[url('https://images.unsplash.com/photo-1590059591465-b46321287118?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-25"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-full md:w-1/2 bg-[url('/Images/gothic-archway.png')] bg-cover bg-center opacity-25"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-narthex-black/80 to-narthex-black"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12">
