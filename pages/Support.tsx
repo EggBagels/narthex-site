@@ -21,7 +21,7 @@ export const Support: React.FC = () => {
             Help us build workspaces where faith and excellence thrive.
           </p>
           <div className="flex justify-center">
-            <Button variant={ButtonVariant.PRIMARY} onClick={() => window.location.href='mailto:hello@narthex.com'}>
+            <Button variant={ButtonVariant.PRIMARY} onClick={() => window.location.href='mailto:narthexokc@gmail.com'}>
               Partner With Us
             </Button>
           </div>
@@ -73,7 +73,7 @@ export const Support: React.FC = () => {
             <p className="text-narthex-brown mb-6">
               Support our scholarship fund, sponsor an event, or contribute to our capital campaign for future expansion. Narthex is a 501(c)(3) organization.
             </p>
-            <Button variant={ButtonVariant.PRIMARY} onClick={() => window.location.href='mailto:hello@narthex.com'}>
+            <Button variant={ButtonVariant.PRIMARY} onClick={() => window.location.href='mailto:narthexokc@gmail.com'}>
               Contact to Give
             </Button>
           </div>

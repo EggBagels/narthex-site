@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
-import { MapPin, Mail, Phone, Instagram, Linkedin, Facebook } from 'lucide-react';
+import { MapPin, Mail, Instagram, Linkedin, Facebook } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -34,15 +34,11 @@ export const Footer: React.FC = () => {
             <div className="flex flex-col gap-4 font-sans text-sm">
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-narthex-gold mt-1" />
-                <span>Nichols Hills<br />I-44 & Broadway Extension<br />Oklahoma City, OK</span>
+                <span>225 NW 59th St<br />Oklahoma City, Oklahoma</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={18} className="text-narthex-gold" />
-                <a href="mailto:hello@narthex.com" className="hover:text-narthex-cream">hello@narthex.com</a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone size={18} className="text-narthex-gold" />
-                <span>(405) 555-0123</span>
+                <a href="mailto:narthexokc@gmail.com" className="hover:text-narthex-cream">narthexokc@gmail.com</a>
               </div>
             </div>
           </div>

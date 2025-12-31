@@ -100,7 +100,7 @@ export const Home: React.FC = () => {
       <section className="py-24 bg-narthex-black px-6">
         <div className="max-w-5xl mx-auto text-center space-y-4 mb-16">
           <h2 className="font-serif text-4xl text-narthex-gold">Your Workspace in Oklahoma City</h2>
-          <p className="font-sans text-narthex-gray text-lg">Nichols Hills • I-44 & Broadway Extension</p>
+          <p className="font-sans text-narthex-gray text-lg">225 NW 59th St • Oklahoma City, Oklahoma</p>
         </div>
         
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
