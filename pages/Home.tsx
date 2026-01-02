@@ -1,10 +1,79 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Briefcase, Users, BookOpen, Cross, Columns, LayoutGrid, Sun } from 'lucide-react';
 import { Button } from '../components/Button';
 import { ButtonVariant } from '../types';
+import { motion } from "motion/react";
 
 export const Home: React.FC = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [catholicProScrollProgress, setCatholicProScrollProgress] = useState(0);
+  const pillarsRef = useRef<HTMLElement>(null);
+  const catholicProRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!pillarsRef.current) return;
+
+      const section = pillarsRef.current;
+      const rect = section.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Calculate when section is centered in viewport
+      const sectionCenter = rect.top + rect.height / 2;
+      const viewportCenter = windowHeight / 2;
+
+      // Calculate progress based on how centered the section is
+      // Tight window: complete reveal by the time section is centered
+      const startPoint = windowHeight * 0.85;  // Start as section enters
+      const endPoint = windowHeight * 0.5;     // Finish when perfectly centered
+
+      let progress = 0;
+
+      if (sectionCenter <= startPoint && sectionCenter >= endPoint) {
+        // Map the section's position to 0-1 progress
+        progress = (startPoint - sectionCenter) / (startPoint - endPoint);
+        progress = Math.max(0, Math.min(1, progress)); // Clamp between 0 and 1
+      } else if (sectionCenter < endPoint) {
+        progress = 1; // Fully revealed
+      }
+
+      setScrollProgress(progress);
+
+      // Track "Built for Catholic Professionals" section
+      if (catholicProRef.current) {
+        const catholicSection = catholicProRef.current;
+        const catholicRect = catholicSection.getBoundingClientRect();
+
+        // Start revealing when section enters viewport, finish when centered
+        const catholicStart = windowHeight * 0.9;
+        const catholicEnd = windowHeight * 0.5;
+        const catholicCenter = catholicRect.top + catholicRect.height / 2;
+
+        let catholicProgress = 0;
+        if (catholicCenter <= catholicStart && catholicCenter >= catholicEnd) {
+          catholicProgress = (catholicStart - catholicCenter) / (catholicStart - catholicEnd);
+          catholicProgress = Math.max(0, Math.min(1, catholicProgress));
+        } else if (catholicCenter < catholicEnd) {
+          catholicProgress = 1;
+        }
+
+        setCatholicProScrollProgress(catholicProgress);
+      }
+    };
+
+    // Initial check
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       {/* Hero Section */}
@@ -36,62 +105,129 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Four Pillars */}
-      <section className="py-24 md:py-32 px-6 bg-narthex-cream relative">
-        <div className="absolute inset-0 bg-stone-texture opacity-[0.06] pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {[
-              {
-                icon: <Briefcase size={32} strokeWidth={1.5} />,
-                title: "Professional Workspace",
-                desc: "Dedicated offices and co-working spaces designed for focused, excellent work in a community that shares your values."
-              },
-              {
-                icon: <Columns size={32} strokeWidth={1.5} />,
-                title: "Authentic Community",
-                desc: "Connect with Catholic professionals who understand the challenge of integrating faith and work in the modern world."
-              },
-              {
-                icon: <BookOpen size={32} strokeWidth={1.5} />,
-                title: "Professional Formation",
-                desc: "Networking events, workshops, and mentorship from successful Catholic business leaders who invest in your growth."
-              },
-              {
-                icon: <Cross size={32} strokeWidth={1.5} />,
-                title: "Faith Formation",
-                desc: "Quarterly Masses, small groups, and spiritual resources to deepen your relationship with God while pursuing professional excellence."
-              }
-            ].map((pillar, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center space-y-6 p-6 group">
-                <div className="text-narthex-gold transition-transform duration-500 group-hover:-translate-y-2 p-6 border-2 border-narthex-gold/30 gothic-arch bg-narthex-white shadow-sm">
-                  {pillar.icon}
-                </div>
-                <h3 className="font-serif text-2xl text-narthex-black">{pillar.title}</h3>
-                <p className="font-sans text-narthex-brown leading-relaxed text-sm md:text-base">
-                  {pillar.desc}
-                </p>
-              </div>
-            ))}
+{/* Four Pillars */}
+<section ref={pillarsRef} className="py-24 md:py-32 px-6 bg-narthex-cream relative min-h-screen flex items-center">
+  <div className="absolute inset-0 bg-stone-texture opacity-[0.06] pointer-events-none"></div>
+
+  <div className="max-w-7xl mx-auto relative z-10 w-full">
+    <div
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+    >
+      {[
+        {
+          icon: <Briefcase size={32} strokeWidth={1.5} />,
+          title: "Professional Workspace",
+          desc: "Dedicated offices and co-working spaces designed for focused, excellent work in a community that shares your values."
+        },
+        {
+          icon: <Columns size={32} strokeWidth={1.5} />,
+          title: "Authentic Community",
+          desc: "Connect with Catholic professionals who understand the challenge of integrating faith and work in the modern world."
+        },
+        {
+          icon: <BookOpen size={32} strokeWidth={1.5} />,
+          title: "Professional Formation",
+          desc: "Networking events, workshops, and mentorship from successful Catholic business leaders who invest in your growth."
+        },
+        {
+          icon: <Cross size={32} strokeWidth={1.5} />,
+          title: "Faith Formation",
+          desc: "Quarterly Masses, small groups, and spiritual resources to deepen your relationship with God while pursuing professional excellence."
+        }
+      ].map((pillar, idx) => {
+        // Calculate reveal progress for this specific pillar
+        // Each pillar gets 25% of the total scroll progress (0-0.25, 0.25-0.5, 0.5-0.75, 0.75-1)
+        const pillarStartProgress = idx * 0.25;
+        const pillarEndProgress = (idx + 1) * 0.25;
+
+        // Calculate how much this pillar should be revealed (0 to 1)
+        let pillarReveal = 0;
+        if (scrollProgress >= pillarEndProgress) {
+          pillarReveal = 1; // Fully revealed
+        } else if (scrollProgress > pillarStartProgress) {
+          // Partially revealed based on progress within this pillar's range
+          pillarReveal = (scrollProgress - pillarStartProgress) / 0.25;
+        }
+
+        // Smooth easing for reveal
+        const easedReveal = pillarReveal * pillarReveal * (3 - 2 * pillarReveal); // Smoothstep
+
+        return (
+          <motion.div
+            key={idx}
+            className="flex flex-col items-center text-center space-y-6 p-6 group"
+            style={{
+              opacity: easedReveal,
+              transform: `translateY(${(1 - easedReveal) * 24}px)`
+            }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+
+          <div className="text-narthex-gold transition-transform duration-500 group-hover:-translate-y-2 p-6 border-2 border-narthex-gold/30 gothic-arch bg-narthex-white shadow-sm">
+            {pillar.icon}
           </div>
-        </div>
-      </section>
+
+          <h3 className="font-serif text-2xl text-narthex-black">
+            {pillar.title}
+          </h3>
+
+          <p className="font-sans text-narthex-brown leading-relaxed text-sm md:text-base">
+            {pillar.desc}
+          </p>
+        </motion.div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
 
       {/* Who This Is For */}
-      <section className="relative py-32 bg-narthex-black text-narthex-cream overflow-hidden">
-        <div className="absolute left-0 top-0 bottom-0 w-full md:w-1/2 bg-[url('/Images/gothic-archway.png')] bg-cover bg-center opacity-25"></div>
+      <section ref={catholicProRef} className="relative py-32 bg-narthex-black text-narthex-cream overflow-hidden">
+        {/* Background image with subtle parallax */}
+        <motion.div
+          className="absolute left-0 top-0 bottom-0 w-full md:w-1/2 bg-[url('/Images/gothic-archway.png')] bg-cover bg-center opacity-25"
+          style={{
+            y: `${(1 - catholicProScrollProgress) * -20}px`
+          }}
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-narthex-black/80 to-narthex-black"></div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12">
           <div className="hidden md:block md:col-span-5"></div>
           <div className="md:col-span-7 space-y-8">
-            <h2 className="font-serif text-4xl md:text-5xl text-narthex-gold">Built for Catholic Professionals</h2>
-            <p className="font-sans text-lg leading-relaxed text-narthex-cream/90 max-w-2xl">
+            {/* Heading - reveals first */}
+            <motion.h2
+              className="font-serif text-4xl md:text-5xl text-narthex-gold"
+              style={{
+                opacity: Math.min(catholicProScrollProgress * 1.5, 1),
+                transform: `translateY(${(1 - Math.min(catholicProScrollProgress * 1.5, 1)) * 30}px)`
+              }}
+            >
+              Built for Catholic Professionals
+            </motion.h2>
+
+            {/* First paragraph - reveals second with slight delay */}
+            <motion.p
+              className="font-sans text-lg leading-relaxed text-narthex-cream/90 max-w-2xl"
+              style={{
+                opacity: Math.max(0, Math.min((catholicProScrollProgress - 0.2) * 1.5, 1)),
+                transform: `translateY(${(1 - Math.max(0, Math.min((catholicProScrollProgress - 0.2) * 1.5, 1))) * 25}px)`
+              }}
+            >
               Whether you're an entrepreneur building something new, a remote worker seeking community, or a business owner looking for a workspace that aligns with your values - Narthex is your home.
-            </p>
-            <p className="font-sans text-lg leading-relaxed text-narthex-cream/90 max-w-2xl">
+            </motion.p>
+
+            {/* Second paragraph - reveals last */}
+            <motion.p
+              className="font-sans text-lg leading-relaxed text-narthex-cream/90 max-w-2xl"
+              style={{
+                opacity: Math.max(0, Math.min((catholicProScrollProgress - 0.4) * 1.5, 1)),
+                transform: `translateY(${(1 - Math.max(0, Math.min((catholicProScrollProgress - 0.4) * 1.5, 1))) * 20}px)`
+              }}
+            >
               This is where you can work with excellence, grow in your faith, and build authentic relationships with people who share your commitment to integrating the sacred and the professional.
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>
