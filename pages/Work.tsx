@@ -30,7 +30,7 @@ export const Work: React.FC = () => {
 
       {/* Benefits - Stone Texture */}
       <section className="py-24 px-6 bg-narthex-cream relative">
-        <div className="absolute inset-0 bg-stone-texture opacity-[0.06] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <h2 className="font-serif text-4xl text-center mb-16 text-narthex-black">Membership Benefits</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -100,7 +100,7 @@ export const Work: React.FC = () => {
 
       {/* Programming - Stone Texture */}
       <section className="py-24 px-6 bg-narthex-cream relative">
-        <div className="absolute inset-0 bg-stone-texture opacity-[0.06] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
         <div className="max-w-5xl mx-auto relative z-10">
           <h2 className="font-serif text-3xl md:text-4xl text-center mb-16">Community Programming</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -154,7 +154,7 @@ export const Work: React.FC = () => {
 
       {/* CTA */}
       <section className="py-24 bg-narthex-cream border-t border-narthex-gray/10 relative">
-        <div className="absolute inset-0 bg-stone-texture opacity-[0.06] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
         <div className="max-w-3xl mx-auto text-center px-6 relative z-10">
           <h2 className="font-serif text-4xl mb-6">Ready to Join Narthex?</h2>
           <div className="flex items-center justify-center gap-4 text-sm font-sans mb-10 text-narthex-gray">

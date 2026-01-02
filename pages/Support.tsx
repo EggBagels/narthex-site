@@ -30,7 +30,7 @@ export const Support: React.FC = () => {
 
       {/* Vision - Stone Texture */}
       <section className="py-24 px-6 bg-narthex-cream relative">
-        <div className="absolute inset-0 bg-stone-texture opacity-[0.06] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
         <div className="max-w-3xl mx-auto text-center space-y-8 relative z-10">
           <h2 className="font-serif text-3xl md:text-4xl">Why This Matters</h2>
           <p className="font-sans text-lg text-narthex-brown leading-relaxed">
@@ -65,7 +65,7 @@ export const Support: React.FC = () => {
 
       {/* Ways to Partner - Stone Texture */}
       <section className="py-24 px-6 bg-narthex-cream relative">
-        <div className="absolute inset-0 bg-stone-texture opacity-[0.06] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
           
           <div className="bg-white p-10 border-t-4 border-narthex-green shadow-sm hover:shadow-lg transition-shadow duration-300">

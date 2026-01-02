@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
           <div className="space-y-6">
             <Logo light className="scale-110 origin-left" />
             <p className="font-sans text-sm leading-relaxed max-w-xs">
-              Where faith and professional excellence strengthen each other. A workspace for Catholic professionals in Oklahoma City.
+              Where faith and professional excellence strengthen each other. A workspace for Catholic professionals.
             </p>
           </div>
 
@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-narthex-gray/20 flex flex-col md:flex-row items-center justify-between gap-4 font-sans text-xs">
-          <p>&copy; {new Date().getFullYear()} Narthex OKC. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Narthex Inc. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-narthex-gold transition-colors"><Instagram size={20} /></a>
             <a href="#" className="hover:text-narthex-gold transition-colors"><Linkedin size={20} /></a>

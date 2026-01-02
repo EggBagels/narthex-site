@@ -107,7 +107,7 @@ export const Home: React.FC = () => {
 
 {/* Four Pillars */}
 <section ref={pillarsRef} className="py-24 md:py-32 px-6 bg-narthex-cream relative min-h-screen flex items-center">
-  <div className="absolute inset-0 bg-stone-texture opacity-[0.06] pointer-events-none"></div>
+  <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
 
   <div className="max-w-7xl mx-auto relative z-10 w-full">
     <div
@@ -235,7 +235,7 @@ export const Home: React.FC = () => {
       {/* Building a Movement */}
       <section className="relative py-24 md:py-32 px-6 bg-narthex-cream overflow-hidden">
         {/* Subtle stone texture overlay */}
-        <div className="absolute inset-0 bg-stone-texture opacity-[0.06] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto relative">
 
@@ -292,9 +292,7 @@ export const Home: React.FC = () => {
                 isolation, but through real community.
               </p>
 
-              <p className="font-sans text-base md:text-lg leading-relaxed text-narthex-brown font-medium">
-                This is just the beginning.
-              </p>
+              
 
             </div>
 
@@ -356,7 +354,7 @@ export const Home: React.FC = () => {
 
       {/* Next Step */}
       <section className="py-32 px-6 bg-narthex-cream relative">
-        <div className="absolute inset-0 bg-stone-texture opacity-[0.06] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
           {/* Card 1 */}
           <div className="bg-narthex-cream border border-narthex-gray/30 p-10 shadow-[0_2px_15px_rgba(0,0,0,0.05)] hover:-translate-y-2 transition-transform duration-500">
