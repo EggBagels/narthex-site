@@ -8,7 +8,7 @@ export const Home: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden parallax" style={{ backgroundImage: "url('/Images/cathedral-nave.png')" }}>
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden parallax" style={{ backgroundImage: "url('/Images/Narthex_Hero.png')" }}>
         <div className="absolute inset-0 bg-narthex-black/25 mix-blend-multiply"></div>
         {/* Subtle Vignette */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(10,10,10,0.6)_100%)]"></div>
@@ -19,7 +19,7 @@ export const Home: React.FC = () => {
             Where Faith Meets<br />Professional Excellence
           </h1>
           <p className="font-sans text-lg md:text-xl text-narthex-cream mb-12 max-w-2xl mx-auto font-light tracking-wide">
-            A workspace for Catholic professionals in Oklahoma City.
+            A space for Catholic professionals to grow in faith and professional excellence.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link to="/work">
@@ -96,26 +96,125 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* See The Space */}
-      <section className="py-24 bg-narthex-black px-6">
-        <div className="max-w-5xl mx-auto text-center space-y-4 mb-16">
-          <h2 className="font-serif text-4xl text-narthex-gold">Your Workspace in Oklahoma City</h2>
-          <p className="font-sans text-narthex-gray text-lg">225 NW 59th St • Oklahoma City, Oklahoma</p>
+      {/* Building a Movement */}
+      <section className="relative py-24 md:py-32 px-6 bg-narthex-cream overflow-hidden">
+        {/* Subtle stone texture overlay */}
+        <div className="absolute inset-0 bg-stone-texture opacity-[0.06] pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto relative">
+
+          {/* Heading - Left-aligned, generous space */}
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-narthex-gold mb-12 md:mb-16 max-w-4xl leading-tight">
+            Building a Movement, One City at a Time
+          </h2>
+
+          {/* Content Grid - Text + Bleeding Image */}
+          <div className="relative">
+
+            {/* TEXT COLUMN - Constrained Width */}
+            <div className="relative z-10 max-w-2xl space-y-6 md:space-y-8">
+
+              {/* First Two Paragraphs */}
+              <p className="font-sans text-base md:text-lg leading-relaxed text-narthex-brown">
+                Remote work and entrepreneurship offer incredible freedom, but they often
+                come with isolation. Whether you're building a business, working remotely,
+                or freelancing, you have probably felt what is missing. A professional
+                community that truly understands your values.
+              </p>
+
+              <p className="font-sans text-base md:text-lg leading-relaxed text-narthex-brown">
+                Narthex exists to fill that gap. We are creating spaces where Catholic
+                professionals, entrepreneurs, remote workers, freelancers, and business owners
+                can do their best work alongside people who share both their drive and their
+                faith. A place where a Catholic attorney can work with a Catholic developer.
+                Where real conversations happen naturally alongside strategic ones. Where your
+                faith is never something to downplay, and your commitment to excellence is
+                simply expected.
+              </p>
+
+              {/* PULL QUOTE - Large, Dramatic, Gold */}
+              <blockquote className="my-12 md:my-16 py-8 md:py-12 pl-6 md:pl-8 border-l-4 border-narthex-gold">
+                <p className="font-serif text-2xl md:text-3xl lg:text-4xl text-narthex-gold italic leading-tight">
+                  "Where Catholic professionals sharpen one another toward excellence in
+                  both craft and character."
+                </p>
+              </blockquote>
+
+              {/* Remaining Paragraphs */}
+              <p className="font-sans text-base md:text-lg leading-relaxed text-narthex-brown">
+                This is a place where professional excellence and spiritual integrity grow
+                together. Each strengthening the other. A place where new ventures emerge
+                from shared convictions and mutual trust.
+              </p>
+
+              <p className="font-sans text-base md:text-lg leading-relaxed text-narthex-brown">
+                We are starting in Oklahoma City, but the vision reaches far beyond one
+                location. We are building a nationwide network of spaces where Catholic
+                professionals can thrive without having to compartmentalize their lives.
+                Where the way you work Monday through Friday reflects the values you live
+                on Sunday. Where the next generation of Catholic leaders is shaped not in
+                isolation, but through real community.
+              </p>
+
+              <p className="font-sans text-base md:text-lg leading-relaxed text-narthex-brown font-medium">
+               
+              </p>
+
+            </div>
+
+            {/* IMAGE - Bleeds to Right Edge */}
+            <div className="absolute top-0 right-0 w-full md:w-[50%] lg:w-[45%] h-full pointer-events-none hidden md:block">
+              <div className="relative h-full w-full">
+
+                {/* Gradient Mask - Blends image into cream background */}
+                <div className="absolute inset-y-0 left-0 w-24 md:w-32 lg:w-40 bg-gradient-to-r from-narthex-cream via-narthex-cream/80 to-transparent z-10"></div>
+
+                {/* Dome Construction Image */}
+                <img
+                  src="/Images/dome_construction.png"
+                  alt="Gothic cathedral dome under construction with scaffolding, symbolizing the building of a movement"
+                  className="absolute inset-0 w-full h-full object-cover opacity-85"
+                />
+
+              </div>
+            </div>
+
+            {/* Mobile Image Treatment - Subtle Background */}
+            <div className="md:hidden absolute top-0 right-0 w-full h-full pointer-events-none">
+              <img
+                src="/Images/dome_construction.png"
+                alt="Gothic cathedral dome under construction with scaffolding"
+                className="absolute inset-0 w-full h-full object-cover opacity-30"
+              />
+            </div>
+
+          </div>
         </div>
-        
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-           <div className="h-80 md:h-[500px] col-span-1 md:col-span-2 overflow-hidden rounded-sm relative group">
-             <div className="absolute inset-0 bg-narthex-black/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-             <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80" alt="Office Space" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100" />
-           </div>
-           <div className="h-80 md:h-[500px] col-span-1 overflow-hidden rounded-sm relative group">
-             <div className="absolute inset-0 bg-narthex-black/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-             <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80" alt="Meeting Room" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100" />
-           </div>
-        </div>
-        
-        <div className="text-center mt-12">
-          <p className="text-narthex-gray text-sm">Starting in Oklahoma City, with vision to expand to cities nationwide</p>
+      </section>
+
+      {/* Architectural Image Band - Visual Transition */}
+      <section className="relative h-[250px] md:h-[300px] lg:h-[350px] overflow-hidden">
+        {/* Background Image - Architectural Detail */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/Images/gothic-archway.png')"
+          }}
+        ></div>
+
+        {/* Dark Overlay for Depth */}
+        <div className="absolute inset-0 bg-narthex-black/70"></div>
+
+        {/* Scripture Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center px-6 max-w-4xl">
+            <p className="font-serif text-2xl md:text-3xl lg:text-4xl text-narthex-gold italic leading-relaxed mb-4">
+              "Whatever your task, work heartily, as serving the Lord"
+            </p>
+            <p className="font-sans text-sm md:text-base lg:text-lg text-narthex-cream/70 tracking-widest uppercase">
+              Colossians 3:23
+            </p>
+          </div>
         </div>
       </section>
 

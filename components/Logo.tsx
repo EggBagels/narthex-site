@@ -6,16 +6,18 @@ interface LogoProps {
 }
 
 export const Logo: React.FC<LogoProps> = ({ className = '', light = false }) => {
-  // Use white/black logo for dark backgrounds (hero), black/gold for light backgrounds
-  const logoSrc = light ? '/Images/NARTHEX Logo White_Black.png' : '/Images/Narthex logo black_gold.png';
-
   return (
-    <div className={`flex items-center ${className}`}>
+    <div className={`flex items-center gap-3 ${className}`}>
       <img
-        src={logoSrc}
+        src="/Images/Narthex Logo (Gold_Transparent).png"
         alt="Narthex Logo"
         className="h-10 w-auto object-contain"
       />
+      <span className={`font-serif text-2xl font-semibold tracking-tight transition-colors duration-300 ${
+        light ? 'text-narthex-cream' : 'text-narthex-black'
+      }`}>
+        NARTHEX
+      </span>
     </div>
   );
 };
