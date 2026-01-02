@@ -157,7 +157,7 @@ export const Home: React.FC = () => {
               </p>
 
               <p className="font-sans text-base md:text-lg leading-relaxed text-narthex-brown font-medium">
-               
+                This is just the beginning.
               </p>
 
             </div>
