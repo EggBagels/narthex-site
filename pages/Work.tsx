@@ -35,10 +35,10 @@ export const Work: React.FC = () => {
           <h2 className="font-serif text-4xl text-center mb-16 text-narthex-black">Membership Benefits</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: <Wifi />, title: "Amenities", desc: "High-speed WiFi, conference rooms, printing, and professional atmosphere." },
+              { icon: <Wifi />, title: "Amenities", desc: "High-speed WiFi, 24/7 access, community space, and private offices." },
               { icon: <Users />, title: "Community", desc: "Access to a network of like-minded professionals and mentors." },
-              { icon: <Monitor />, title: "Formation", desc: "Workshops and training from successful Catholic business leaders." },
-              { icon: <BookOpen />, title: "Spiritual", desc: "Quarterly Masses, small groups, and spiritual resources on-site." },
+              { icon: <Monitor />, title: "Professional Formation", desc: "Workshops and training from successful Catholic business leaders." },
+              { icon: <BookOpen />, title: "Spiritual Formation", desc: "Mass on-site, scheduled prayer times, small groups, and evangelization events." },
             ].map((item, i) => (
               <div key={i} className="bg-white/50 p-8 border border-narthex-gray/20 shadow-sm hover:shadow-md transition-all">
                 <div className="text-narthex-gold mb-4">{item.icon}</div>

@@ -34,10 +34,10 @@ export const Support: React.FC = () => {
         <div className="max-w-3xl mx-auto text-center space-y-8 relative z-10">
           <h2 className="font-serif text-3xl md:text-4xl">Why This Matters</h2>
           <p className="font-sans text-lg text-narthex-brown leading-relaxed">
-            The modern professional world often demands we leave our faith at the door. Narthex bridges that gap, creating a space where Catholic identity isn't just permitted—it's the foundation for excellence.
+            The modern professional world often forces us to leave our faith at the door. Narthex bridges that gap, creating a space where Catholic identity is the foundation for excellence.
           </p>
           <p className="font-sans text-lg text-narthex-brown leading-relaxed">
-             By supporting Narthex, you aren't just renting desks. You are investing in a cultural renewal that starts with the way we work.
+            By supporting Narthex, you are investing in a cultural renewal that starts with the way we work. You are investing in a generation of professionals who want to bring Catholic values into the highest levels of business. You are helping to create a space where professionals can be inspired to achieve greatness in their work and their faith.
           </p>
         </div>
       </section>
@@ -45,12 +45,12 @@ export const Support: React.FC = () => {
       {/* Impact */}
       <section className="py-24 px-6 bg-narthex-black text-narthex-cream">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-serif text-3xl text-narthex-gold text-center mb-16">Your Investment Enables</h2>
+          <h2 className="font-serif text-3xl text-narthex-gold text-center mb-16">Your Investment Provides</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: <TrendingUp />, title: "Excellence", desc: "Stronger Catholic businesses and professionals." },
-              { icon: <Heart />, title: "Community", desc: "Vibrant faith communities in the marketplace." },
-              { icon: <GraduationCap />, title: "Formation", desc: "Scholarship funds and professional workshops." },
+              { icon: <TrendingUp />, title: "Scholarships", desc: "Providing Catholic professionals a dynamic place to work without the cost." },
+              { icon: <Heart />, title: "Community", desc: "Community events to strengthen faith and spark evangelization." },
+              { icon: <GraduationCap />, title: "Formation", desc: "Professional workshops to nurture the next generation of business leaders." },
               { icon: <Globe />, title: "Expansion", desc: "Future expansion to transform cities nationwide." },
             ].map((item, i) => (
               <div key={i} className="text-center p-6 border border-narthex-gray/20 rounded-sm">

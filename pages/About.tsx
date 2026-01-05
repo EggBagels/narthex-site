@@ -10,13 +10,25 @@ export const About: React.FC = () => {
 
       <section className="px-6 pb-24 max-w-3xl mx-auto space-y-8 font-sans text-lg text-narthex-brown leading-relaxed">
         <p>
-          Narthex began with a simple observation: Catholic professionals in Oklahoma City often felt they lived two separate lives—one on Sunday, and another Monday through Friday.
+          The genesis of Narthex is simple, really. Two friends in Oklahoma City, one a business owner and one a remote worker, realized that they both rented an office and figured they may as well rent an office in the same space. The conversations were edifying and natural. It just seemed like how work was meant to be.
         </p>
         <p>
-          We believed that faith shouldn't be checked at the door of the office. Inspired by the narthex of a church—the transition space between the sacred liturgy and the world—we created a workspace that bridges the gap.
+          This led to a simple observation: Catholic professionals feel like they have to live two separate lives. One on Sunday, and another Monday through Friday.
         </p>
         <p>
-          Here, the pursuit of professional excellence is fueled by spiritual depth. We aren't just building businesses; we are building a culture.
+          Naturally, it begged the question: "What if there was a place where Catholics could work together?" A place that transforms 9am-5pm from the "work" part of your life into just "part of your life."
+        </p>
+        <p>
+          So, we created Narthex. It started with a single building (just 5 offices and a coworking space). A place for us and our colleagues to work. It transformed into the vision we have now.
+        </p>
+        <p>
+          We are building a culture where Catholics can lean on one another to help their businesses thrive. We envision a "hub" where Catholics from different industries and areas of expertise all gather under one roof to handle their day-to-day work, but also to support one another in their ventures.
+        </p>
+        <p>
+          Not only do we think Narthex should be a place of professional excellence, but also a center of evangelization. Part of designing the space in a community-oriented way was to support evangelistic initiatives like Bible study, small groups, Mass, and family gatherings.
+        </p>
+        <p>
+          Inspired by St. Augustine's "City of God," we want to transform the ordinary into the sacred, one city at a time.
         </p>
       </section>
 
