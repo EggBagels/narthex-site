@@ -2,8 +2,30 @@ import React from 'react';
 import { Button } from '../components/Button';
 import { ButtonVariant } from '../types';
 import { Check, Wifi, Users, Monitor, BookOpen } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export const Work: React.FC = () => {
+  const personas = [
+    {
+      initial: "S",
+      name: "Sarah Chen",
+      role: "Tech Entrepreneur",
+      quote: "I needed more than a desk—I needed a community that understood both my startup ambitions and my faith. Narthex gave me both."
+    },
+    {
+      initial: "M",
+      name: "Michael Rodriguez",
+      role: "Real Estate Broker",
+      quote: "Working from home was isolating. Here, I'm surrounded by people who share my values and challenge me to grow professionally."
+    },
+    {
+      initial: "E",
+      name: "Elena Kowalski",
+      role: "Marketing Consultant",
+      quote: "The quarterly Masses and professional workshops make this so much more than a workspace—it's a community committed to excellence."
+    }
+  ];
+
   return (
     <>
       {/* Hero - Vaulted Ceiling */}
@@ -15,7 +37,7 @@ export const Work: React.FC = () => {
         
         <div className="relative z-10 text-center max-w-4xl px-6">
           <h1 className="font-serif text-5xl md:text-6xl text-narthex-gold mb-6">
-            Where Your Work<br />Becomes Worship
+            Blur the Line<br />Between Faith and Work
           </h1>
           <p className="font-sans text-xl text-narthex-cream mb-10">
             Professional workspace designed for Catholic excellence.
@@ -125,30 +147,59 @@ export const Work: React.FC = () => {
         </div>
       </section>
 
-      {/* Tour the Space - Gallery */}
-      <section className="py-24 bg-narthex-black px-6">
+      {/* Who Thrives at Narthex */}
+      <section className="py-24 md:py-32 px-6 bg-narthex-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-4xl text-narthex-gold text-center mb-4">Tour the Space</h2>
-           <p className="font-sans text-narthex-gray text-center mb-16 max-w-2xl mx-auto">
-              A physical environment crafted to inspire peace, focus, and creativity.
-           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-             {[
-                "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1577412647305-991150c7d163?auto=format&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80"
-             ].map((url, idx) => (
-               <div key={idx} className="aspect-[4/3] overflow-hidden rounded-sm group relative">
-                 <div className="absolute inset-0 bg-narthex-gold/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-                 <img 
-                    src={url} 
-                    alt="Space preview" 
-                    className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" 
-                 />
-               </div>
-             ))}
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="font-serif text-3xl md:text-4xl lg:text-5xl text-narthex-gold text-center mb-16 md:mb-20"
+          >
+            Who Thrives at Narthex
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+            {personas.map((person, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.15,
+                  ease: "easeOut"
+                }}
+                className="text-center space-y-6 group"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05, rotate: 5 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="w-20 h-20 rounded-full bg-narthex-gold/10 border-2 border-narthex-gold flex items-center justify-center mx-auto transition-colors duration-300 group-hover:bg-narthex-gold/20"
+                >
+                  <span className="font-serif text-3xl text-narthex-gold">
+                    {person.initial}
+                  </span>
+                </motion.div>
+
+                <p className="font-sans text-narthex-cream font-semibold text-lg">
+                  {person.name}
+                </p>
+
+                <p className="font-sans text-narthex-gold text-sm uppercase tracking-wider">
+                  {person.role}
+                </p>
+
+                <p className="font-sans text-narthex-gray text-base md:text-lg leading-relaxed italic">
+                  "{person.quote}"
+                </p>
+              </motion.div>
+            ))}
           </div>
+
         </div>
       </section>
 
