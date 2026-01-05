@@ -208,17 +208,18 @@ export const Work: React.FC = () => {
         <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
         <div className="max-w-3xl mx-auto text-center px-6 relative z-10">
           <h2 className="font-serif text-4xl mb-6">Ready to Join Narthex?</h2>
-          <div className="flex items-center justify-center gap-4 text-sm font-sans mb-10 text-narthex-gray">
-            <span>Schedule a Tour</span>
-            <span className="text-narthex-gold">→</span>
-            <span>Submit Application</span>
-            <span className="text-narthex-gold">→</span>
-            <span>Get Started</span>
+          <p className="font-sans text-lg text-narthex-gray mb-10">
+            Send us an email to schedule a visit
+          </p>
+          <div className="max-w-md mx-auto">
+            <Button
+              variant={ButtonVariant.PRIMARY}
+              fullWidth
+              onClick={() => window.location.href = 'mailto:narthexokc@gmail.com?subject=Tour Request&body=Hi, I\'d like to schedule a tour of Narthex.'}
+            >
+              Schedule Your Tour
+            </Button>
           </div>
-          <form className="max-w-md mx-auto space-y-4 mb-8">
-            <input type="email" placeholder="Enter your email address" className="w-full px-4 py-3 bg-white border border-narthex-gray/30 focus:border-narthex-gold outline-none placeholder:text-narthex-gray/50" />
-            <Button variant={ButtonVariant.PRIMARY} fullWidth>Schedule Your Tour</Button>
-          </form>
         </div>
       </section>
     </>
