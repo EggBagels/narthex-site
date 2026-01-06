@@ -56,11 +56,16 @@
           transform: translateY(0);
         }
       }
+      /* Parallax disabled on mobile - causes issues on iOS */
       .parallax {
-        background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+      }
+      @media (min-width: 768px) {
+        .parallax {
+          background-attachment: fixed;
+        }
       }
       /* Gothic Arch Shape for Icons */
       .gothic-arch {

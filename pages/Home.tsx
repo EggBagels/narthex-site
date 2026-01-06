@@ -13,6 +13,13 @@ export const Home: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Disable scroll animations on mobile for performance
+      if (window.innerWidth < 768) {
+        setScrollProgress(1);
+        setCatholicProScrollProgress(1);
+        return;
+      }
+
       if (!pillarsRef.current) return;
 
       const section = pillarsRef.current;
@@ -77,17 +84,17 @@ export const Home: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden parallax" style={{ backgroundImage: "url('/Images/Narthex_Hero.png')" }}>
+      <section className="relative h-[70vh] min-h-[500px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden parallax" style={{ backgroundImage: "url('/Images/Narthex_Hero.png')" }}>
         <div className="absolute inset-0 bg-narthex-black/25 mix-blend-multiply"></div>
         {/* Subtle Vignette */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(10,10,10,0.6)_100%)]"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-narthex-black/90 via-narthex-black/20 to-transparent"></div>
         
-        <div className="relative z-10 text-center max-w-4xl px-6 fade-in-up">
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-narthex-gold mb-6 leading-tight drop-shadow-lg">
+        <div className="relative z-10 text-center max-w-4xl px-4 sm:px-6 fade-in-up">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-narthex-gold mb-6 leading-tight drop-shadow-lg">
             Where Faith Meets<br />Professional Excellence
           </h1>
-          <p className="font-sans text-lg md:text-xl text-narthex-cream mb-12 max-w-2xl mx-auto font-light tracking-wide">
+          <p className="font-sans text-base sm:text-lg md:text-xl text-narthex-cream mb-10 sm:mb-12 max-w-2xl mx-auto font-light tracking-wide">
             A space for Catholic professionals to grow in faith and professional excellence.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -106,12 +113,12 @@ export const Home: React.FC = () => {
       </section>
 
 {/* Four Pillars */}
-<section ref={pillarsRef} className="py-24 md:py-32 px-6 bg-narthex-cream relative min-h-screen flex items-center">
+<section ref={pillarsRef} className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 bg-narthex-cream relative min-h-screen flex items-center">
   <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
 
   <div className="max-w-7xl mx-auto relative z-10 w-full">
     <div
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12"
     >
       {[
         {
@@ -235,7 +242,7 @@ export const Home: React.FC = () => {
       {/* Building a Movement */}
       <section className="relative py-24 md:py-32 px-6 bg-narthex-cream overflow-hidden">
         {/* Subtle stone texture overlay */}
-        <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-stone-texture opacity-[0.15] md:opacity-[0.06] pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto relative">
 
@@ -292,33 +299,17 @@ export const Home: React.FC = () => {
                 isolation, but through real community.
               </p>
 
-              
-
             </div>
 
-            {/* IMAGE - Bleeds to Right Edge */}
-            <div className="absolute top-0 right-0 w-full md:w-[50%] lg:w-[45%] h-full pointer-events-none hidden md:block">
-              <div className="relative h-full w-full">
+            {/* IMAGE - Desktop only: absolute right */}
+            <div className="hidden md:block md:absolute md:top-0 md:right-0 md:w-[50%] lg:w-[45%] md:h-full">
+              {/* Desktop gradient mask */}
+              <div className="absolute inset-y-0 left-0 w-24 md:w-32 lg:w-40 bg-gradient-to-r from-narthex-cream via-narthex-cream/80 to-transparent z-10"></div>
 
-                {/* Gradient Mask - Blends image into cream background */}
-                <div className="absolute inset-y-0 left-0 w-24 md:w-32 lg:w-40 bg-gradient-to-r from-narthex-cream via-narthex-cream/80 to-transparent z-10"></div>
-
-                {/* Dome Construction Image */}
-                <img
-                  src="/Images/dome_construction.png"
-                  alt="Gothic cathedral dome under construction with scaffolding, symbolizing the building of a movement"
-                  className="absolute inset-0 w-full h-full object-cover opacity-85"
-                />
-
-              </div>
-            </div>
-
-            {/* Mobile Image Treatment - Subtle Background */}
-            <div className="md:hidden absolute top-0 right-0 w-full h-full pointer-events-none">
               <img
                 src="/Images/dome_construction.png"
-                alt="Gothic cathedral dome under construction with scaffolding"
-                className="absolute inset-0 w-full h-full object-cover opacity-30"
+                alt="Gothic cathedral dome under construction with scaffolding, symbolizing the building of a movement"
+                className="w-full h-full object-cover opacity-85"
               />
             </div>
 

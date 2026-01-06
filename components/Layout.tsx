@@ -14,7 +14,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
   return (
     <div className="flex flex-col min-h-screen bg-narthex-cream relative">
-      <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-0 bg-stone-texture mix-blend-multiply"></div>
+      <div className="hidden md:block fixed inset-0 pointer-events-none opacity-[0.03] z-0 bg-stone-texture mix-blend-multiply"></div>
       <Header />
       <AnimatePresence mode="wait">
   <motion.main

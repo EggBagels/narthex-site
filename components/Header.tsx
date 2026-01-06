@@ -63,11 +63,13 @@ export const Header: React.FC = () => {
         </nav>
 
         {/* Mobile Toggle */}
-        <button 
-          className="md:hidden z-50 text-narthex-gold"
+        <button
+          className="md:hidden z-50 text-narthex-gold p-2 -mr-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={mobileMenuOpen}
         >
-          {mobileMenuOpen ? <X size={32} /> : <Menu size={32} color={!isScrolled ? '#F5F1E8' : '#0A0A0A'} />}
+          {mobileMenuOpen ? <X size={40} /> : <Menu size={40} color={!isScrolled ? '#F5F1E8' : '#0A0A0A'} />}
         </button>
 
         {/* Mobile Menu */}

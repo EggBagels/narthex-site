@@ -48,10 +48,10 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-narthex-gray/20 flex flex-col md:flex-row items-center justify-between gap-4 font-sans text-xs">
           <p>&copy; {new Date().getFullYear()} Narthex Inc. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-narthex-gold transition-colors"><Instagram size={20} /></a>
-            <a href="#" className="hover:text-narthex-gold transition-colors"><Linkedin size={20} /></a>
-            <a href="#" className="hover:text-narthex-gold transition-colors"><Facebook size={20} /></a>
+          <div className="flex items-center gap-4">
+            <a href="#" className="p-2 hover:text-narthex-gold transition-colors" aria-label="Instagram"><Instagram size={20} /></a>
+            <a href="#" className="p-2 hover:text-narthex-gold transition-colors" aria-label="LinkedIn"><Linkedin size={20} /></a>
+            <a href="#" className="p-2 hover:text-narthex-gold transition-colors" aria-label="Facebook"><Facebook size={20} /></a>
           </div>
         </div>
       </div>

@@ -29,17 +29,17 @@ export const Work: React.FC = () => {
   return (
     <>
       {/* Hero - Vaulted Ceiling */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] min-h-[400px] md:h-[60vh] md:min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('/Images/vaulted-ceiling.png')] bg-cover bg-center opacity-25"></div>
         {/* Vignette and Darkening */}
         <div className="absolute inset-0 bg-narthex-black/50"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]"></div>
         
-        <div className="relative z-10 text-center max-w-4xl px-6">
-          <h1 className="font-serif text-5xl md:text-6xl text-narthex-gold mb-6">
+        <div className="relative z-10 text-center max-w-4xl px-4 sm:px-6">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-narthex-gold mb-6">
             Blur the Line<br />Between Faith and Work
           </h1>
-          <p className="font-sans text-xl text-narthex-cream mb-10">
+          <p className="font-sans text-lg sm:text-xl text-narthex-cream mb-10">
             Professional workspace designed for Catholic excellence.
           </p>
           <div className="flex justify-center">
@@ -51,11 +51,11 @@ export const Work: React.FC = () => {
       </section>
 
       {/* Benefits - Stone Texture */}
-      <section className="py-24 px-6 bg-narthex-cream relative">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-narthex-cream relative">
         <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <h2 className="font-serif text-4xl text-center mb-16 text-narthex-black">Membership Benefits</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <h2 className="font-serif text-3xl sm:text-4xl text-center mb-12 sm:mb-16 text-narthex-black">Membership Benefits</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
               { icon: <Wifi />, title: "Amenities", desc: "High-speed WiFi, 24/7 access, community space, and private offices." },
               { icon: <Users />, title: "Community", desc: "Access to a network of like-minded professionals and mentors." },

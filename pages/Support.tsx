@@ -7,17 +7,17 @@ export const Support: React.FC = () => {
   return (
     <>
       {/* Hero - Stained Glass */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[45vh] min-h-[350px] md:h-[50vh] md:min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('/Images/st-joseph.png')] bg-cover bg-center opacity-20"></div>
         {/* Darkening & Vignette */}
         <div className="absolute inset-0 bg-narthex-black/60"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]"></div>
         
-        <div className="relative z-10 text-center max-w-4xl px-6">
-          <h1 className="font-serif text-5xl md:text-6xl text-narthex-gold mb-6">
+        <div className="relative z-10 text-center max-w-4xl px-4 sm:px-6">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-narthex-gold mb-6">
             Invest in Catholic Professionals
           </h1>
-          <p className="font-sans text-xl text-narthex-cream mb-10">
+          <p className="font-sans text-lg sm:text-xl text-narthex-cream mb-10">
             Help us build workspaces where faith and excellence thrive.
           </p>
           <div className="flex justify-center">
