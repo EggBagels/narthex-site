@@ -244,7 +244,7 @@ export const Home: React.FC = () => {
         {/* Subtle stone texture overlay */}
         <div className="absolute inset-0 bg-stone-texture opacity-[0.15] md:opacity-[0.06] pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto relative">
+        <div className="max-w-7xl mx-auto relative overflow-hidden">
 
           {/* Heading - Left-aligned, generous space */}
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-narthex-gold mb-12 md:mb-16 max-w-4xl leading-tight">
@@ -344,7 +344,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Next Step */}
-      <section className="py-32 px-6 bg-narthex-cream relative">
+      <section className="py-32 px-6 bg-narthex-cream relative overflow-hidden">
         <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
           {/* Card 1 */}

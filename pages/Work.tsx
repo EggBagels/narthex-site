@@ -51,7 +51,7 @@ export const Work: React.FC = () => {
       </section>
 
       {/* Benefits - Stone Texture */}
-      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-narthex-cream relative">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-narthex-cream relative overflow-hidden">
         <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <h2 className="font-serif text-3xl sm:text-4xl text-center mb-12 sm:mb-16 text-narthex-black">Membership Benefits</h2>
@@ -121,7 +121,7 @@ export const Work: React.FC = () => {
       </section>
 
       {/* Programming - Stone Texture */}
-      <section className="py-24 px-6 bg-narthex-cream relative">
+      <section className="py-24 px-6 bg-narthex-cream relative overflow-hidden">
         <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
         <div className="max-w-5xl mx-auto relative z-10">
           <h2 className="font-serif text-3xl md:text-4xl text-center mb-16">Community Programming</h2>
@@ -148,7 +148,7 @@ export const Work: React.FC = () => {
       </section>
 
       {/* Who Thrives at Narthex */}
-      <section className="py-24 md:py-32 px-6 bg-narthex-black">
+      <section className="py-24 md:py-32 px-6 bg-narthex-black overflow-hidden">
         <div className="max-w-7xl mx-auto">
 
           <motion.h2
@@ -204,7 +204,7 @@ export const Work: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-narthex-cream border-t border-narthex-gray/10 relative">
+      <section className="py-24 bg-narthex-cream border-t border-narthex-gray/10 relative overflow-hidden">
         <div className="absolute inset-0 bg-stone-texture opacity-[0.10] pointer-events-none"></div>
         <div className="max-w-3xl mx-auto text-center px-6 relative z-10">
           <h2 className="font-serif text-4xl mb-6">Ready to Join Narthex?</h2>
