@@ -7,16 +7,18 @@ import { motion } from 'motion/react';
 export const Work: React.FC = () => {
   const personas = [
     {
-      initial: "S",
-      name: "Sarah Chen",
-      role: "Tech Entrepreneur",
-      quote: "I needed more than a desk—I needed a community that understood both my startup ambitions and my faith. Narthex gave me both."
+      initial: "R",
+      name: "Roberto Garza",
+      role: "Business Owner",
+      quote: "I was looking for a place to run my business. Narthex gave me a place to work well, while being surrounded by likeminded Catholic professionals.",
+      image: "/Images/roberto_headshot.jpeg"
     },
     {
-      initial: "M",
-      name: "Michael Rodriguez",
-      role: "Real Estate Broker",
-      quote: "Working from home was isolating. Here, I'm surrounded by people who share my values and challenge me to grow professionally."
+      initial: "J",
+      name: "Josh Paiement",
+      role: "Alumni Outreach Director, FOCUS",
+      quote: "In a world plagued by isolation and anonymity, Narthex offers intentional connection and authentic relationship at the intersection of work and life.",
+      image: "/Images/josh_headshot.png"
     },
     {
       initial: "E",
@@ -178,11 +180,15 @@ export const Work: React.FC = () => {
                 <motion.div
                   whileHover={{ scale: 1.05, rotate: 5 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="w-20 h-20 rounded-full bg-narthex-gold/10 border-2 border-narthex-gold flex items-center justify-center mx-auto transition-colors duration-300 group-hover:bg-narthex-gold/20"
+                  className="w-32 h-32 rounded-full bg-narthex-gold/10 border-2 border-narthex-gold flex items-center justify-center mx-auto transition-colors duration-300 group-hover:bg-narthex-gold/20 overflow-hidden"
                 >
-                  <span className="font-serif text-3xl text-narthex-gold">
-                    {person.initial}
-                  </span>
+                  {person.image ? (
+                    <img src={person.image} alt={person.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="font-serif text-3xl text-narthex-gold">
+                      {person.initial}
+                    </span>
+                  )}
                 </motion.div>
 
                 <p className="font-sans text-narthex-cream font-semibold text-lg">
