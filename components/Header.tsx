@@ -36,8 +36,8 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-narthex-cream/95 backdrop-blur-sm border-b border-narthex-gray/10 shadow-md py-4' : 'bg-transparent py-6'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? 'bg-narthex-cream/90 backdrop-blur-md border-b border-narthex-gray/15 shadow-md py-4' : 'bg-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -51,7 +51,7 @@ export const Header: React.FC = () => {
             <Link
               key={item.path}
               to={item.path}
-              className={`font-sans text-sm font-medium tracking-wide uppercase transition-colors duration-300 border-b-2 border-transparent hover:border-narthex-gold ${
+              className={`inline-block font-sans text-sm font-medium tracking-wide uppercase transition-all duration-200 border-b-2 border-transparent hover:border-narthex-gold hover:-translate-y-px ${
                 !isScrolled
                   ? 'text-narthex-cream hover:text-narthex-gold'
                   : 'text-narthex-black hover:text-narthex-gold'

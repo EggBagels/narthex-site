@@ -77,6 +77,16 @@
       .gothic-arch {
         clip-path: polygon(0% 30%, 50% 0%, 100% 30%, 100% 100%, 0% 100%);
       }
+      /* Shimmer sweep for "Most Popular" badge */
+      @keyframes shimmer-sweep {
+        0%   { background-position: -200% center; }
+        100% { background-position: 200% center; }
+      }
+      .shimmer-badge {
+        background: linear-gradient(90deg, #C9A961 35%, #F5F1E8 50%, #C9A961 65%);
+        background-size: 200% auto;
+        animation: shimmer-sweep 2.8s linear infinite;
+      }
     </style>
   <script type="importmap">
 {

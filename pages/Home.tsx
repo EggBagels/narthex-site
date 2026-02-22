@@ -1,9 +1,54 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Briefcase, Users, BookOpen, Cross, Columns, LayoutGrid, Sun } from 'lucide-react';
 import { Button } from '../components/Button';
 import { ButtonVariant } from '../types';
 import { motion } from "motion/react";
+
+const VERSE = '"Whatever your task, work heartily, as serving the Lord"';
+
+const ScriptureTypewriter: React.FC = () => {
+  const [displayed, setDisplayed] = useState('');
+  const [done, setDone] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          let i = 0;
+          const interval = setInterval(() => {
+            i++;
+            setDisplayed(VERSE.slice(0, i));
+            if (i >= VERSE.length) {
+              clearInterval(interval);
+              setDone(true);
+            }
+          }, 38);
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={containerRef}>
+      <p className="font-serif text-2xl md:text-3xl lg:text-4xl text-narthex-gold italic leading-relaxed mb-4 min-h-[1.4em]">
+        {displayed}
+        <span
+          className="inline-block w-[2px] h-[0.85em] bg-narthex-gold ml-1 align-middle transition-opacity duration-700"
+          style={{ opacity: done ? 0 : 1, animation: done ? 'none' : 'pulse 1s ease-in-out infinite' }}
+        />
+      </p>
+    </div>
+  );
+};
 
 export const Home: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -91,7 +136,7 @@ export const Home: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-narthex-black/90 via-narthex-black/20 to-transparent"></div>
         
         <div className="relative z-10 text-center max-w-4xl px-4 sm:px-6 fade-in-up">
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-narthex-gold mb-6 leading-tight drop-shadow-lg">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-narthex-gold mb-6 leading-[1.05] tracking-tight drop-shadow-lg">
             Where Faith Meets<br />Professional Excellence
           </h1>
           <p className="font-sans text-base sm:text-lg md:text-xl text-narthex-cream mb-10 sm:mb-12 max-w-2xl mx-auto font-light tracking-wide">
@@ -205,7 +250,7 @@ export const Home: React.FC = () => {
           <div className="md:col-span-7 space-y-8">
             {/* Heading - reveals first */}
             <motion.h2
-              className="font-serif text-4xl md:text-5xl text-narthex-gold"
+              className="font-serif text-4xl md:text-5xl text-narthex-gold tracking-tight leading-[1.05]"
               style={{
                 opacity: Math.min(catholicProScrollProgress * 1.5, 1),
                 transform: `translateY(${(1 - Math.min(catholicProScrollProgress * 1.5, 1)) * 30}px)`
@@ -247,7 +292,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto relative overflow-hidden">
 
           {/* Heading - Left-aligned, generous space */}
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-narthex-gold mb-12 md:mb-16 max-w-4xl leading-tight">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-narthex-gold mb-12 md:mb-16 max-w-4xl leading-[1.05] tracking-tight">
             Building a Movement, One City at a Time
           </h2>
 
@@ -333,9 +378,7 @@ export const Home: React.FC = () => {
         {/* Scripture Overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-6 max-w-4xl">
-            <p className="font-serif text-2xl md:text-3xl lg:text-4xl text-narthex-gold italic leading-relaxed mb-4">
-              "Whatever your task, work heartily, as serving the Lord"
-            </p>
+            <ScriptureTypewriter />
             <p className="font-sans text-sm md:text-base lg:text-lg text-narthex-cream/70 tracking-widest uppercase">
               Colossians 3:23
             </p>

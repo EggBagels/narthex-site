@@ -38,7 +38,7 @@ export const Work: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]"></div>
         
         <div className="relative z-10 text-center max-w-4xl px-4 sm:px-6">
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-narthex-gold mb-6">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-narthex-gold mb-6 tracking-tight leading-[1.05]">
             Blur the Line<br />Between Faith and Work
           </h1>
           <p className="font-sans text-lg sm:text-xl text-narthex-cream mb-10">
@@ -64,7 +64,7 @@ export const Work: React.FC = () => {
               { icon: <Monitor />, title: "Professional Formation", desc: "Workshops and training from successful Catholic business leaders." },
               { icon: <BookOpen />, title: "Spiritual Formation", desc: "Mass on-site, scheduled prayer times, small groups, and evangelization events." },
             ].map((item, i) => (
-              <div key={i} className="bg-white/50 p-8 border border-narthex-gray/20 shadow-sm hover:shadow-md transition-all">
+              <div key={i} className="bg-white/50 p-8 border border-narthex-gray/20 shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-narthex-gold/30 transition-all duration-300">
                 <div className="text-narthex-gold mb-4">{item.icon}</div>
                 <h3 className="font-serif text-xl mb-3">{item.title}</h3>
                 <p className="text-sm text-narthex-brown leading-relaxed">{item.desc}</p>
@@ -99,7 +99,7 @@ export const Work: React.FC = () => {
 
             {/* Dedicated */}
             <div className="bg-narthex-cream/5 border border-narthex-gold/20 p-8 md:p-12 hover:bg-narthex-cream/10 transition-all duration-300 relative">
-              <div className="absolute top-0 right-0 bg-narthex-gold text-narthex-black text-xs font-bold px-3 py-1 uppercase tracking-widest">Most Popular</div>
+              <div className="shimmer-badge absolute top-0 right-0 text-narthex-black text-xs font-bold px-3 py-1 uppercase tracking-widest">Most Popular</div>
               <h3 className="font-serif text-3xl text-narthex-gold mb-2">Dedicated Office</h3>
               <div className="text-4xl font-sans font-bold mb-6">$600<span className="text-lg font-normal text-narthex-gray">/month</span></div>
               <ul className="space-y-4 mb-8 text-narthex-cream/80">

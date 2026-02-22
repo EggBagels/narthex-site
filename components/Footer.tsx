@@ -21,10 +21,10 @@ export const Footer: React.FC = () => {
           <div className="space-y-6">
             <h4 className="font-serif text-narthex-gold text-lg">Navigation</h4>
             <nav className="flex flex-col gap-3 font-sans text-sm">
-              <Link to="/" className="hover:text-narthex-cream transition-colors">Home</Link>
-              <Link to="/work" className="hover:text-narthex-cream transition-colors">Work at Narthex</Link>
-              <Link to="/support" className="hover:text-narthex-cream transition-colors">Support Us</Link>
-              <Link to="/about" className="hover:text-narthex-cream transition-colors">About</Link>
+              <Link to="/" className="inline-block hover:text-narthex-cream transition-all duration-200 hover:-translate-y-px">Home</Link>
+              <Link to="/work" className="inline-block hover:text-narthex-cream transition-all duration-200 hover:-translate-y-px">Work at Narthex</Link>
+              <Link to="/support" className="inline-block hover:text-narthex-cream transition-all duration-200 hover:-translate-y-px">Support Us</Link>
+              <Link to="/about" className="inline-block hover:text-narthex-cream transition-all duration-200 hover:-translate-y-px">About</Link>
             </nav>
           </div>
 
@@ -33,8 +33,17 @@ export const Footer: React.FC = () => {
             <h4 className="font-serif text-narthex-gold text-lg">Contact</h4>
             <div className="flex flex-col gap-4 font-sans text-sm">
               <div className="flex items-start gap-3">
-                <MapPin size={18} className="text-narthex-gold mt-1" />
-                <span>225 NW 59th St<br />Oklahoma City, Oklahoma</span>
+                <MapPin size={18} className="text-narthex-gold mt-1 shrink-0" />
+                <div>
+                  <span>225 NW 59th St<br />Oklahoma City, Oklahoma</span>
+                  <div className="flex items-center gap-2 mt-2">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-narthex-gold opacity-60" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-narthex-gold" />
+                    </span>
+                    <span className="text-xs text-narthex-gold/70 font-sans uppercase tracking-widest">Now Open</span>
+                  </div>
+                </div>
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={18} className="text-narthex-gold" />
