@@ -25,7 +25,7 @@ export const Work: React.FC = () => {
       name: "Brett Farley",
       role: "Narthex Member",
       quote: "Our previous spot was spartan and lacked community. The Narthex is our place for affordable workspace with men joining us on the front line.",
-      image: "/Images/Brett Farley_20251106_3 square.jpeg"
+      image: "/Images/brett_farley.jpeg"
     }
   ];
 
