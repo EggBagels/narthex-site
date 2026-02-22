@@ -21,10 +21,11 @@ export const Work: React.FC = () => {
       image: "/Images/josh_headshot.png"
     },
     {
-      initial: "E",
-      name: "Elena Kowalski",
-      role: "Marketing Consultant",
-      quote: "The quarterly Masses and professional workshops make this so much more than a workspace—it's a community committed to excellence."
+      initial: "B",
+      name: "Brett Farley",
+      role: "Narthex Member",
+      quote: "Our previous spot was spartan and lacked community. The Narthex is our place for affordable workspace with men joining us on the front line.",
+      image: "/Images/Brett Farley_20251106_3 square.jpeg"
     }
   ];
 
